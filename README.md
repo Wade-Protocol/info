@@ -38,15 +38,54 @@ At any time, either party can choose to break the bond. Doing so incurs two pena
 
 ```mermaid
     flowchart LR
-        A((Start)) --> B[Forming a Bond]
-        B --> C[Both Parties Deposit Funds]
-        C --> D[Funds Go to Safe Earning Protocol]
-        D --> E[Bond is Now Active]
-        E --> F{Break Bond?}
-        F -- "No" --> G[Reputation Grows Over Time]
-        F -- "Yes" --> H[Penalty Imposed; Reputation Hit]
-        H --> I((End))
-        G --> I((End))
+        %% Starting point
+        Start[Enter Into Protocol]
+    
+        %% User decision: Create, Join, or Quit
+        Start --> A[Sign In]
+        A --> B{What do you want to do?}
+        B --> C[Create a Trust Bond]
+        B --> D[Join an Existing Trust Bond]
+        B --> E[Quit an Existing Bond]
+    
+        %% Create a Trust Bond
+        C --> C2[Invite Other Party]
+        C2 --> C3[Other Party Accepts Invitation?]
+        C3 --> |Yes| C4[Both Parties Deposit Funds]
+        C3 --> |No| C5[Bond Creation Fails]
+    
+        C4 --> C6[Bond is Active]
+        C6 --> F[Funds Earn Yield]
+        C6 --> G[Reputation Improves Over Time]
+    
+        %% Join an Existing Trust Bond
+        D --> D1[Enter Bond ID]
+        D1 --> D2[Verify Bond Details]
+        D2 --> D3[Deposit Funds]
+        D3 --> C6
+    
+        %% Quit an Existing Bond
+        E --> E1[Select Bond to Quit]
+        E1 --> E2{Bond Active or Broken?}
+        E2 --> |Active| E3[Quit Bond]
+        E3 --> E4[1% into treasury]
+        E4 --> E5[Funds Withdrawn]
+        E2 --> |Broken| E6[Broken or Not Found]
+    
+        %% Breaking the Bond
+        C6 --> H{Break the Bond?}
+        H --> |Yes| H1[Bond Breaks]
+        H1 --> H2[5% Penalty Deducted to Treasury]
+        H2 --> H3[Breaker's Reputation Decreases]
+        H3 --> H4[Other Party's Reputation Intact]
+        H --> |No| H5[Bond Remains Active]
+    
+        %% Ending points
+        H4 --> End1[Bond Ends]
+        H5 --> End2[Continue Earning Yield]
+        E5 --> End4[Bond Ended by Quit]
+    
+
 ```
 
 ## Reputation Points
