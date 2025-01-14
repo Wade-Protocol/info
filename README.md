@@ -88,6 +88,17 @@ At any time, either party can choose to break the bond. Doing so incurs two pena
 
 ```
 
+## Smart Contracts Architecture
+
+```mermaid
+    flowchart TD
+        A[Factory Contract]
+        A --> B[User Wallet Contract]
+        B --> C[Bond Contract]
+        D[Treasury Contract] --> B
+        E[Settings Contract] --> C
+```
+
 ## Reputation Points
 
 Reputation Points lie at the heart of our protocol, reflecting how trustworthy each participant is based on their on-chain behavior. Here’s how they’re calculated and why they matter:
@@ -156,33 +167,5 @@ Overall, Reputation Points incentivize honest behavior and discourage malicious 
 - **Synergy Across the Ecosystem**
   - The broader Web3 space benefits when multiple platforms share and trust a common reputation framework, fostering safer interactions and more transparent collaborations.
 
-## Examples
-
-Below are some short and sweet scenarios showcasing how trust bonds add value across various Web3 use cases:
-
-#### DeFi Lending & Borrowing
-
-- Trusted users enjoy better loan terms.
-- Lenders can rely on on-chain reputation to gauge borrower reliability.
-
-#### DAO Governance
-
-- Higher trust scores can yield more voting power.
-- Members stake bonds to ensure commitment to proposals and grants.
-
-#### NFT Marketplaces
-
-- Require minimum trust scores to avoid rug pulls or shady projects.
-- Secure high-value trades with a bond to deter fraud.
-
-#### Social Communities
-
-- Verified “bonded” members only, reducing fake profiles.
-- Reputation-based moderation for fairer, safer discussion.
-
-#### Launchpads & Crowdfunding
-
-- Creators stake bonds to prove they won’t abandon their projects.
-- Investors gain confidence knowing there’s real “skin in the game.”
 
 By putting real funds at stake and tracking reputation on-chain, our protocol reduces scams, encourages honest behavior, and fosters a more secure Web3.
