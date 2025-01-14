@@ -77,7 +77,7 @@ Reputation Points lie at the heart of our protocol, reflecting how trustworthy e
     - Protocols can then decide whether to offer users certain perks (e.g., higher borrowing limits, exclusive access) or to restrict access based on a minimum trust threshold.
 
 6.  **Sybil Resistance**
-    - By using unique identity checks (e.g., ENS, Gitcoin Passport), each user can build only one reputation profile, preventing people from creating multiple accounts to boost their scores artificially.
+    - By using unique identity checks (e.g.Gitcoin Passport) and identities like ENS, each user can build only one reputation profile, preventing people from creating multiple accounts to boost their scores artificially.
 
 Overall, Reputation Points incentivize honest behavior and discourage malicious actions within the protocol, driving a healthier, more secure Web3 ecosystem.
 
