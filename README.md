@@ -1,9 +1,9 @@
 # Wade Protocol (An onchain trust primitive)
 
 ### **Welcome to Wade Protocol**
+---
 In the real world, trust has foundation in primitives like survival,social bonds, bloodlines etc. These trust primitives transform depending on time and place, the cavemen had a primitive of survival in order to form their trust.We might not be cavemen anymore, but humans crave connection and security, even in the digital ecosystems of today.
 Hence what if there is a new way to establish on-chain trust and reduce fraud in decentralized environments. Wade Protocol introduces on-chain trust bonds that allow users to put their money where their mouth is, proving trustworthiness while earning yield on their bond funds.
----
 
 ## **Problem Statement**
 **Trust** redefines different human interactions, be that individuals interacting on markets or party members running a state. However, in decentralized environments, ensuring trust and credibility is challenging due to anonymity, the lack of robust verification mechanisms and lack quantifiable credibility. 
