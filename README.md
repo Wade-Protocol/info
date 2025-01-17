@@ -1,24 +1,28 @@
-# Wade Protocol
+# Wade Protocol (An onchain trust primitive)
 
 ### **Welcome to Wade Protocol**
-A new way to establish on-chain credibility and reduce fraud in decentralized environments. Wade Protocol introduces on-chain trust bonds that allow users to put their money where their mouth is, proving trustworthiness while earning yield on their bond funds.
-
+In the real world, trust has foundation in primitives like survival,social bonds, bloodlines etc. These trust primitives transform depending on time and place, the cavemen had a primitive of survival in order to form their trust.We might not be cavemen anymore, but humans crave connection and security, even in the digital ecosystems of today.
+Hence what if there is a new way to establish on-chain trust and reduce fraud in decentralized environments. Wade Protocol introduces on-chain trust bonds that allow users to put their money where their mouth is, proving trustworthiness while earning yield on their bond funds.
 ---
 
 ## **Problem Statement**
-**Trust** is a fundamental component of human interaction. However, in decentralized environments, ensuring trust and credibility is challenging due to anonymity and the lack of robust verification mechanisms.
+**Trust** redefines different human interactions, be that individuals interacting on markets or party members running a state. However, in decentralized environments, ensuring trust and credibility is challenging due to anonymity, the lack of robust verification mechanisms and lack quantifiable credibility. 
+Hence the positive externalities trust brings in human interactions is low or even absent on chain. That is something we wanna change.
 
-### Challenges:
-- **Mistrust in Web3**: The ability to create multiple anonymous identities enables bad actors to exploit decentralized platforms through scams, rug pulls, and phishing attacks.
-- **Lack of Credibility**: Honest users have no reliable way to demonstrate trustworthiness, reducing collaboration and opportunities.
 
 ---
 
 ## **Our Solution**
 ### **On-Chain Trust Bonds**
-- Users create bonds by depositing funds into a shared or one-sided pool, signaling trust in another party.
-- Bonds generate yield through lending protocols, allowing users to earn while maintaining trust.
-- Breaking bonds results in financial and reputational penalties, fostering accountability.
+- Users create bonds by depositing funds into an escrow which gives to only 2 users, the person creating the bond and the other pair signaling trust in another user.
+- The funds in the bonds generate yield through yield bearing protocols (like Aave), allowing users to not ideally lock funds while still participating in the protocol.
+- A bond score is measuring on the following parameters of , value locked in bond, number of bonds, context of other users bond score, time of bond and range of a user's bond value
+
+
+### Challenges:
+- **Sybil in Web3**: The ability to create multiple anonymous identities enables bad actors to exploit decentralized platforms through scams, rug pulls, and phishing attacks. Sybil resistance is a huge challenge for `Wade protocol` currently.
+- **Track of Credibility**: Honest users have other reliable way to demonstrate trustworthiness which may not be captured fully by the protocol, reducing collaboration and opportunities.
+
 
 ### **New Features**
 1. **Social Trust Graph**: Reputation is calculated based on trust relationships and weighted metrics.
@@ -27,6 +31,8 @@ A new way to establish on-chain credibility and reduce fraud in decentralized en
 4. **Community Reward Pool**: Yield from collected withdrawal fees, grants, and funds is distributed to honest and loyal bondholders.
 
 ---
+
+
 
 ## **Reputation Score**
 Reputation lies at the core of Wade Protocol, encouraging users to behave honestly by rewarding good actions and penalizing bad ones.
@@ -50,7 +56,7 @@ Reputation lies at the core of Wade Protocol, encouraging users to behave honest
 ---
 
 ## **Community Reward Pool**
-The Community Reward Pool incentivizes loyalty and honesty within the ecosystem.
+The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
 
 ### Sources of the Reward Pool:
 1. **Withdrawal Fees**: Charged when users break bonds or dissolve them prematurely.
@@ -147,7 +153,7 @@ The Community Reward Pool incentivizes loyalty and honesty within the ecosystem.
    - Fraud deterrence through penalties and transparency.
 2. **For Protocols**:
    - Automated trust layer to assess user reliability.
-   - Improved security and reduced onboarding friction.
+   - A new trust primitive that exits on chain first.
 3. **For the Ecosystem**:
    - Synergistic trust framework across decentralized platforms, encouraging collaboration.
 
