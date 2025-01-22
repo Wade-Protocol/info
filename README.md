@@ -1,3 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Wade Protocol (An onchain trust primitive)](#wade-protocol-an-onchain-trust-primitive)
+    - [**Welcome to Wade Protocol**](#welcome-to-wade-protocol)
+  - [**Problem Statement**](#problem-statement)
+  - [**Our Solution**](#our-solution)
+    - [**On-Chain Trust Bonds**](#on-chain-trust-bonds)
+    - [Challenges:](#challenges)
+    - [**New Features**](#new-features)
+    - [**Reputation Score**](#reputation-score)
+      - [**Parameters for Reputation Calculation**:](#parameters-for-reputation-calculation)
+    - [**Community Reward Pool**](#community-reward-pool)
+      - [Sources of the Reward Pool:](#sources-of-the-reward-pool)
+    - [Distribution:](#distribution)
+  - [Architecture](#architecture)
+    - [**How It Works**](#how-it-works)
+    - [**Smart Contracts Architecture**](#smart-contracts-architecture)
+  - [**Use Cases**](#use-cases)
+  - [**Join Us**](#join-us)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Wade Protocol (An onchain trust primitive)
 
 ### **Welcome to Wade Protocol**
@@ -34,10 +58,10 @@ Hence the positive externalities trust brings in human interactions is low or ev
 
 
 
-## **Reputation Score**
+### **Reputation Score**
 Reputation lies at the core of Wade Protocol, encouraging users to behave honestly by rewarding good actions and penalizing bad ones.
 
-### **Parameters for Reputation Calculation**:
+#### **Parameters for Reputation Calculation**:
 1. **Time**: Duration for which someone maintains trust bonds without dissolving them.
 2. **Amount**: Total bond money currently held by a user.
 3. **Reputation**: The reputation score of users creating bonds with you (higher reputation connections carry more weight).
@@ -47,18 +71,15 @@ Reputation lies at the core of Wade Protocol, encouraging users to behave honest
    - **Regular Bonds**: Both users deposit money, demonstrating mutual trust. Regular bonds carry a higher weight in score calculations.
 6. **Transitive Trust**: Trust connections through intermediaries enhance reputation, fostering a web of trust.
 
-### **On-Chain Visibility**
-    - Reputation points are visible and verifiable on-chain, allowing other platforms to easily query or reference these scores.
-    - Protocols can then decide whether to offer users certain perks (e.g., higher borrowing limits, exclusive access) or to restrict access based on a minimum trust threshold.
-### **Sybil Resistance**
-    - By using unique identity checks (e.g. World ID) and identities like ENS(Ethereum naming Service), each user can build only one reputation profile, preventing people from creating multiple accounts to boost their scores artificially.
+
+
 
 ---
 
-## **Community Reward Pool**
+### **Community Reward Pool**
 The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
 
-### Sources of the Reward Pool:
+#### Sources of the Reward Pool:
 1. **Withdrawal Fees**: Charged when users break bonds or dissolve them prematurely.
 2. **Dissolving Fees**: Small fees charged when users take back their money by dissolving bonds.
 3. **Grants and Funds**: Contributions from organizations supporting the protocol.
@@ -69,8 +90,8 @@ The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
   - Actively create trust and build the community.
 
 ---
-
-## **How It Works**
+## Architecture
+### **How It Works**
 1. **Create/Join a Bond**:
    - Deposit funds into a bond (one-way or mutual).
 2. **Earn Reputation**:
@@ -131,9 +152,9 @@ The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
     
 
 ```
----
+--
 
-## **Smart Contracts Architecture**
+### **Smart Contracts Architecture**
 
 ```mermaid
     flowchart TD
@@ -144,20 +165,7 @@ The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
         E[Settings Contract] --> C
 ```
 
----
 
-## **Key Benefits**
-1. **For Users**:
-   - Verifiable trust and reputation.
-   - Passive income through bond yields.
-   - Fraud deterrence through penalties and transparency.
-2. **For Protocols**:
-   - Automated trust layer to assess user reliability.
-   - A new trust primitive that exits on chain first.
-3. **For the Ecosystem**:
-   - Synergistic trust framework across decentralized platforms, encouraging collaboration.
-
----
 
 ## **Use Cases**
 - **Proof of Trustworthiness**: Show verifiable trust for perks in dApps.
