@@ -17,6 +17,7 @@
   - [Architecture](#architecture)
     - [**How It Works**](#how-it-works)
     - [**Sequence Diagram**](#sequence-diagram)
+    - [**Technical Architecture Overview**](#technical-architecture-overview)
     - [**Smart Contracts Architecture**](#smart-contracts-architecture)
     - [**Contracts Class Diagram**](#contracts-class-diagram)
   - [**Use Cases**](#use-cases)
