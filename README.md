@@ -215,6 +215,8 @@ sequenceDiagram
   end
 
 ```
+### **Technical Architecture Overview**
+![image](https://github.com/user-attachments/assets/61c30423-2315-4909-965a-5484f998e5a7)
 
 
 ### **Smart Contracts Architecture**
@@ -228,6 +230,7 @@ sequenceDiagram
         E[Settings Contract] --> C
 ```
 ### **Contracts Class Diagram**
+
 
 ```mermaid
 classDiagram
