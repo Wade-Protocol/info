@@ -358,5 +358,6 @@ classDiagram
 ---
 
 ## **Join Us**
-Wade Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3.
+Wade Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3. TG: https://t.me/+AbV5oU_p50s2YjQ1
+
 
