@@ -152,7 +152,65 @@ The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
     
 
 ```
---
+### **Sequence Diagram**
+
+```mermaid
+sequenceDiagram
+  actor User1 as User 1
+  actor User2 as User 2
+  actor Beneficiary as Beneficiary
+  participant UserContract as User Contract
+  participant BondContract as Bond Contract
+  participant YieldContract as Yield Contract
+
+  User1 ->> UserContract: Deposit money
+  User1 ->> UserContract: Create bond with User 2 
+  UserContract ->> BondContract: Create Bond by depositing money
+  BondContract ->> YieldContract: Stake deposited money
+  YieldContract -->> BondContract: Return staked tokens
+
+  BondContract -->> User1: Bond active
+  BondContract -->> User2: Bond active
+
+  BondContract ->> User2: Notify invitation
+  User2 -->> BondContract: Accept bond invitation
+  UserContract ->> BondContract: Deposit money
+  BondContract ->> YieldContract: Stake deposited money
+  YieldContract -->> BondContract: Return staked tokens
+
+  opt Beneficiary Role
+    UserContract ->> Beneficiary: Assign wallet address as beneficiary
+    BondContract -->> Beneficiary: Permission to withdraw bond funds after 5 years of inactivity
+    Beneficiary ->> BondContract: Withdraw bond funds and yield
+    BondContract ->> YieldContract: Unstake remaining funds
+    YieldContract -->> BondContract: Return funds and yield
+    BondContract -->> Beneficiary: Transfer all funds and yield
+  end
+
+  alt Manage bond options
+    UserContract ->> BondContract: Withdraw bond
+    BondContract ->> YieldContract: Unstake money
+    YieldContract -->> BondContract: Return funds
+    BondContract -->> UserContract: Return deposited money (1% fee deducted)
+  else
+    UserContract ->> BondContract: Break bond
+    BondContract ->> YieldContract: Unstake money
+    YieldContract -->> BondContract: Return funds
+    BondContract -->> UserContract: Return total bond money minus 5% fee
+    BondContract -->> User2: Notify bond break
+  end
+
+  opt Beneficiary Role
+    UserContract ->> Beneficiary: Assign wallet address as beneficiary
+    BondContract -->> Beneficiary: Permission to withdraw bond funds after 5 years of inactivity
+    Beneficiary ->> BondContract: Withdraw bond funds and yield
+    BondContract ->> YieldContract: Unstake remaining funds
+    YieldContract -->> BondContract: Return funds and yield
+    BondContract -->> Beneficiary: Transfer all funds and yield
+  end
+
+```
+
 
 ### **Smart Contracts Architecture**
 
@@ -164,6 +222,8 @@ The Community Reward Pool incentivize loyalty and honesty within the ecosystem.
         D[Treasury Contract] --> B
         E[Settings Contract] --> C
 ```
+
+
 
 
 
