@@ -222,6 +222,54 @@ sequenceDiagram
         D[Treasury Contract] --> B
         E[Settings Contract] --> C
 ```
+### **Contracts Class Diagram**
+
+```mermaid
+classDiagram
+    class FactoryContract {
+        +createImplementation() 
+    }
+
+    class ImplementationContract {
+        +createSmartContractWallet 
+    }
+
+    class UserWalletContract {
+        +connectWallet() : void
+        +createBond(partnerWalletAddress: string) : TrustBondContract
+    }
+
+    class TrustBondContract {
+        +breakBond() : void
+        +withdrawBond() : void
+        +collectYield() : void
+    }
+
+    class TreasuryContract {
+        +manageFunds() : void
+        +collectPenalties() : void
+    }
+
+    class SettingsContract {
+        +getBondParameters() : Parameters
+        +updateSettings() : void
+    }
+
+    class YieldProvider {
+
+    }
+
+    FactoryContract --> ImplementationContract : Creates
+    ImplementationContract --> UserWalletContract : Creates
+    UserWalletContract --> TrustBondContract : Creates
+    TrustBondContract --> YieldProvider: sends amount for staking and requests
+    YieldProvider --> TrustBondContract: sends aStaking and perform user requests
+    %% TreasuryContract --> UserWalletContract : Interacts
+    SettingsContract --> TrustBondContract : Provides Parameters
+    YieldProvider --> TreasuryContract: sends fees into treasury when there is an action from user
+
+
+```
 
 
 
