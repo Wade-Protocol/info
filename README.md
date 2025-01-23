@@ -16,7 +16,10 @@
     - [Distribution:](#distribution)
   - [Architecture](#architecture)
     - [**How It Works**](#how-it-works)
+    - [**Sequence Diagram**](#sequence-diagram)
+    - [**Technical Architecture Overview**](#technical-architecture-overview)
     - [**Smart Contracts Architecture**](#smart-contracts-architecture)
+    - [**Contracts Class Diagram**](#contracts-class-diagram)
   - [**Use Cases**](#use-cases)
   - [**Join Us**](#join-us)
 
@@ -213,6 +216,8 @@ sequenceDiagram
   end
 
 ```
+### **Technical Architecture Overview**
+![image](https://github.com/user-attachments/assets/61c30423-2315-4909-965a-5484f998e5a7)
 
 
 ### **Smart Contracts Architecture**
@@ -224,6 +229,120 @@ sequenceDiagram
         B --> C[Bond Contract]
         D[Treasury Contract] --> B
         E[Settings Contract] --> C
+```
+### **Contracts Class Diagram**
+
+
+```mermaid
+classDiagram
+  class UserContractFactory {
+    <<Universal Upgradable Proxy Standard>>
+    +event(address userContract, address owner)
+    +initialize(factoryUserContractSettings : address, variable : address)
+    +updateFactoryUserContractSettings(factoryUserContractSettings : address)
+    +createUser(owner : address, beneficiary : address, userWalletSetting : address, identityService : address[], calldata : bytes32[], shouldVerify : bool, attestationServiceContract : address)
+    -factoryUserContractSettings : address
+  }
+
+  class FactoryUserContractSettings {
+    <<Universal Upgradable Proxy Standard>>
+    +flatFeesUserCreate : uint
+    +percentageFeesUserCreate : uint
+    +treasuryAddress : address
+  }
+
+  class IdentityService {
+    +verify(calldata : bytes32) : bool
+  }
+
+  class UserContract {
+    +createBond(bondSettings : address, tokenAddress : address, yieldProviderInterface : address, amount : uint) : address
+  }
+
+  class UserWalletSettingContract {
+    <<Universal Upgradable Proxy Standard>>
+    +flatFeesBondCreate : uint
+    +percentageFeesBondCreate : uint
+    +flatFeesBondWithdraw : uint
+    +percentageFeesBondWithdraw : uint
+    +flatFeesBondBreak : uint
+    +percentageFeesBondBreak : uint
+    +treasuryAddress : address
+  }
+
+  class AttestationServiceContract {
+    <<Universal Upgradable Proxy Standard>>
+  }
+
+  class EthereumAttestationService {
+  }
+
+  class UserCore {
+    +totalValue : uint
+    +totalBonds : uint
+    +totalSlash : uint
+    +totalBoundBroken : uint
+    +highestBondValue : uint
+    +lowestBoundValue : uint
+    +withdrawBond(bond : address, amount : uint)
+    +breakBond(bond : address, amount : uint)
+    +withdrawOrBreakBond(bond : address, amount : uint)
+  }
+
+  class UserApprovalsAndHooks {
+    +approveSlash()
+    +approveAttestation()
+  }
+
+  class BondSettings {
+    <<Universal Upgradable Proxy Standard>>
+    +flatFeesBondCreate : uint
+    +percentageFeesBondCreate : uint
+    +flatFeesBondWithdraw : uint
+    +percentageFeesBondWithdraw : uint
+    +flatFeesBondBreak : uint
+    +percentageFeesBondBreak : uint
+    +treasuryAddress : address
+  }
+
+  class BondContract {
+    +withdrawYield()
+    +withdrawFunds(amount : uint)
+    +breakBonds(amount : uint)
+    -tokenAddress : address
+    -yieldProviderAddress : address
+  }
+
+  class YieldProviderInterface {
+    <<Universal Upgradable Proxy Standard>>
+    +depositToken() external view returns (address)
+    +balanceOfToken(address addr) external returns (uint256)
+    +supplyTokenTo(uint256 amount, address to) external
+    +redeemToken(uint256 amount) external returns (uint256)
+  }
+
+  class AaveLiquidStakingVault {
+  }
+
+  class TreasuryContract {
+  }
+
+  AttestationServiceContract --> EthereumAttestationService : one-to-one
+  UserContract <|-- UserCore
+  UserContract <|-- UserApprovalsAndHooks
+  UserContract --> UserWalletSettingContract : one-to-one
+  UserContractFactory --> FactoryUserContractSettings : one-to-one
+  UserContractFactory --> IdentityService : "createUser (one-to-many)"
+  UserContractFactory --> UserContract : "createUser (one-to-many)"
+  UserContractFactory --> AttestationServiceContract : one-to-one
+  UserContract --> BondContract : "createBond"
+  BondSettings --> BondContract : one-to-one
+  BondContract --> YieldProviderInterface : one-to-one
+  YieldProviderInterface --> AaveLiquidStakingVault : one-to-one
+  FactoryUserContractSettings --> TreasuryContract : one-to-one
+  BondSettings --> TreasuryContract : one-to-one
+  UserWalletSettingContract --> TreasuryContract : one-to-one
+
 ```
 
 
@@ -239,5 +358,7 @@ sequenceDiagram
 ---
 
 ## **Join Us**
-Trust Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3.
+
+Trust Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3. TG: https://t.me/+AbV5oU_p50s2YjQ1
+
 
