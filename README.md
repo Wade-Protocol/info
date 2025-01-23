@@ -2,8 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Wade Protocol (An onchain trust primitive)](#wade-protocol-an-onchain-trust-primitive)
-    - [**Welcome to Wade Protocol**](#welcome-to-wade-protocol)
+- [Trust Protocol (An onchain trust primitive)](#trust-protocol-an-onchain-trust-primitive)
+    - [**Welcome to Trust Protocol**](#welcome-to-trust-protocol)
   - [**Problem Statement**](#problem-statement)
   - [**Our Solution**](#our-solution)
     - [**On-Chain Trust Bonds**](#on-chain-trust-bonds)
@@ -22,12 +22,12 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Wade Protocol (An onchain trust primitive)
+# Trust Protocol (An onchain trust primitive)
 
-### **Welcome to Wade Protocol**
+### **Welcome to Trust Protocol**
 ---
 In the real world, trust has foundation in primitives like survival,social bonds, bloodlines etc. These trust primitives transform depending on time and place, the cavemen had a primitive of survival in order to form their trust.We might not be cavemen anymore, but humans crave connection and security, even in the digital ecosystems of today.
-Hence what if there is a new way to establish on-chain trust and reduce fraud in decentralized environments. Wade Protocol introduces on-chain trust bonds that allow users to put their money where their mouth is, proving trustworthiness while earning yield on their bond funds.
+Hence what if there is a new way to establish on-chain trust and reduce fraud in decentralized environments. Trust Protocol introduces on-chain trust bonds that allow users to put their money where their mouth is, proving trustworthiness while earning yield on their bond funds.
 
 ## **Problem Statement**
 **Trust** redefines different human interactions, be that individuals interacting on markets or party members running a state. However, in decentralized environments, ensuring trust and credibility is challenging due to anonymity, the lack of robust verification mechanisms and lack quantifiable credibility. 
@@ -44,7 +44,7 @@ Hence the positive externalities trust brings in human interactions is low or ev
 
 
 ### Challenges:
-- **Sybil in Web3**: The ability to create multiple anonymous identities enables bad actors to exploit decentralized platforms through scams, rug pulls, and phishing attacks. Sybil resistance is a huge challenge for `Wade protocol` currently.
+- **Sybil in Web3**: The ability to create multiple anonymous identities enables bad actors to exploit decentralized platforms through scams, rug pulls, and phishing attacks. Sybil resistance is a huge challenge for `Trust protocol` currently.
 - **Track of Credibility**: Honest users have other reliable way to demonstrate trustworthiness which may not be captured fully by the protocol, reducing collaboration and opportunities.
 
 
@@ -59,7 +59,7 @@ Hence the positive externalities trust brings in human interactions is low or ev
 
 
 ### **Reputation Score**
-Reputation lies at the core of Wade Protocol, encouraging users to behave honestly by rewarding good actions and penalizing bad ones.
+Reputation lies at the core of Trust Protocol, encouraging users to behave honestly by rewarding good actions and penalizing bad ones.
 
 #### **Parameters for Reputation Calculation**:
 1. **Time**: Duration for which someone maintains trust bonds without dissolving them.
@@ -239,5 +239,5 @@ sequenceDiagram
 ---
 
 ## **Join Us**
-Wade Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3.
+Trust Protocol is paving the way for a safer, more trustworthy decentralized future. By combining financial stakes, reputation scoring, and rewards, we aim to transform trust in Web3.
 
