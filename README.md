@@ -46,9 +46,10 @@ Hence the positive externalities trust brings in human interactions is low or ev
 - A bond score is measuring on the following parameters of , value locked in bond, number of bonds, context of other users bond score, time of bond and range of a user's bond value
 
 
-### Challenges:
-- **Sybil in Web3**: The ability to create multiple anonymous identities enables bad actors to exploit decentralized platforms through scams, rug pulls, and phishing attacks. Sybil resistance is a huge challenge for `Trust protocol` currently.
-- **Track of Credibility**: Honest users have other reliable way to demonstrate trustworthiness which may not be captured fully by the protocol, reducing collaboration and opportunities.
+### **ENS For Sybil Resistance**: 
+To ensure trust and prevent Sybil attacks, Trust Protocol leverages the Ethereum Name Service (ENS) to provide users with verifiable, persistent identities. This helps maintain the integrity of the protocol and ensures that only genuine participants are involved. Users can only create bonds by first setting up a smart contract wallet linked to their ENS name, ensuring verified participation. Here’s how ENS enhances our system:
+- **Verified and Persistent Identity**: ENS provides a unique, immutable on-chain identity, reducing the possibility of fake identities.
+- **Enhanced Trust**: Linking Trust Bonds to ENS names ensures only verified users can participate, boosting credibility.
 
 
 ### **New Features**
