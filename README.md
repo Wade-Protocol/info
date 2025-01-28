@@ -70,12 +70,7 @@ Reputation lies at the core of Trust Protocol, encouraging users to behave hones
 2. **Amount**: Total bond money currently held by a user.
 3. **Reputation**: The reputation score of users creating bonds with you (higher reputation connections carry more weight).
 4. **Number**: Total number of active bonds.
-5. **Type of Bond**:
-   - **One-Way Bonds**: User A trusts User B and deposits money without requiring B to reciprocate.
-   - **Regular Bonds**: Both users deposit money, demonstrating mutual trust. Regular bonds carry a higher weight in score calculations.
-6. **Transitive Trust**: Trust connections through intermediaries enhance reputation, fostering a web of trust.
-
-
+5. **Ratio of Amount**: Ratio of both User's Amount inside the bond
 
 
 ---
